@@ -1,10 +1,16 @@
 #!/bin/bash
 echo 'GogoCode!'
 
-# Get Report from Surfline
-python3 api.py
 
-echo 'all done here'
+# Get Report from Surfline
+# python3 api.py
+
+my_report=$(python3 api.py)
+
+# echo $my_data
+notify-send "$my_report"
+
+echo 'done'
 exit 0
 
 # Rev 0 prototype use python in bash

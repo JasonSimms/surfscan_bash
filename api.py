@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
+import requests, json, os
 
 def get_surfline():
-    import requests, json
     
     url = 'https://services.surfline.com/kbyg/spots/reports?spotId=5842041f4e65fad6a77087f9'
     resp= requests.get(url)
@@ -10,4 +10,6 @@ def get_surfline():
 
 surf_report = get_surfline()
 # print(surf_report)
-print(surf_report['forecast']['conditions']['value'])
+current_condition = surf_report['forecast']['conditions']['value']
+# print(surf_report['forecast']['conditions']['value'])
+print('Current Conditions are: ', current_condition)
